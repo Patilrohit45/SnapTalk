@@ -11,7 +11,7 @@ import SwiftUI
 struct SnapTalkApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }
