@@ -11,6 +11,8 @@ struct MainTabView: View {
     
     init(){
         makeTabbarOpaque()
+        let thumbImage = UIImage(systemName: "circle.fill")
+        UISlider.appearance().setThumbImage(thumbImage, for: .normal)
     }
     
     var body: some View {

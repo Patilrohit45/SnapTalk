@@ -30,6 +30,8 @@
 		169ED7F22C7C9B9C000254F0 /* BubbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7F12C7C9B9C000254F0 /* BubbleTextView.swift */; };
 		169ED7F42C7C9C3D000254F0 /* BubbleTailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7F32C7C9C3D000254F0 /* BubbleTailView.swift */; };
 		169ED7F72C7C9D8A000254F0 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7F62C7C9D8A000254F0 /* CustomModifiers.swift */; };
+		169ED7F92C7CA602000254F0 /* BubbleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7F82C7CA602000254F0 /* BubbleImageView.swift */; };
+		169ED7FB2C7CAE9A000254F0 /* BubbleAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7FA2C7CAE9A000254F0 /* BubbleAudioView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		169ED7F12C7C9B9C000254F0 /* BubbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextView.swift; sourceTree = "<group>"; };
 		169ED7F32C7C9C3D000254F0 /* BubbleTailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTailView.swift; sourceTree = "<group>"; };
 		169ED7F62C7C9D8A000254F0 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
+		169ED7F82C7CA602000254F0 /* BubbleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleImageView.swift; sourceTree = "<group>"; };
+		169ED7FA2C7CAE9A000254F0 /* BubbleAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleAudioView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,11 +282,13 @@
 			isa = PBXGroup;
 			children = (
 				169ED7E62C7C671B000254F0 /* ChatRoomScreen.swift */,
+				169ED7FA2C7CAE9A000254F0 /* BubbleAudioView.swift */,
 				169ED7EC2C7C7333000254F0 /* MessageListView.swift */,
 				169ED7E82C7C68AC000254F0 /* TextInputArea.swift */,
 				169ED7EA2C7C6FD4000254F0 /* MessageListController.swift */,
 				169ED7F12C7C9B9C000254F0 /* BubbleTextView.swift */,
 				169ED7F32C7C9C3D000254F0 /* BubbleTailView.swift */,
+				169ED7F82C7CA602000254F0 /* BubbleImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				169ED7F42C7C9C3D000254F0 /* BubbleTailView.swift in Sources */,
 				169ED7D92C7C54F3000254F0 /* ChannelTabScreen.swift in Sources */,
 				169ED79B2C7BB95F000254F0 /* SnapTalkApp.swift in Sources */,
+				169ED7F92C7CA602000254F0 /* BubbleImageView.swift in Sources */,
 				169ED7ED2C7C7333000254F0 /* MessageListView.swift in Sources */,
 				169ED7E72C7C671B000254F0 /* ChatRoomScreen.swift in Sources */,
 				169ED7E02C7C5CFA000254F0 /* SettingsItemView.swift in Sources */,
@@ -449,6 +456,7 @@
 				169ED7F02C7C9B01000254F0 /* MessageItem.swift in Sources */,
 				169ED7DB2C7C5865000254F0 /* ChannelItemView.swift in Sources */,
 				169ED7F72C7C9D8A000254F0 /* CustomModifiers.swift in Sources */,
+				169ED7FB2C7CAE9A000254F0 /* BubbleAudioView.swift in Sources */,
 				169ED7C52C7BBC17000254F0 /* MainTabView.swift in Sources */,
 				169ED7E32C7C5D9E000254F0 /* SettingsItem.swift in Sources */,
 			);
