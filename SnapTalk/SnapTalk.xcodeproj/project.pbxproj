@@ -37,6 +37,12 @@
 		169ED8022C7CB436000254F0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 169ED8012C7CB436000254F0 /* FirebaseMessaging */; };
 		169ED8042C7CB436000254F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 169ED8032C7CB436000254F0 /* FirebaseStorage */; };
 		169ED80A2C7CBB99000254F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 169ED8092C7CBB99000254F0 /* GoogleService-Info.plist */; };
+		16D8E4D72C7CE3F4004554B9 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4D62C7CE3F4004554B9 /* LoginScreen.swift */; };
+		16D8E4D92C7CE463004554B9 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4D82C7CE463004554B9 /* AuthHeaderView.swift */; };
+		16D8E4DB2C7CE4F2004554B9 /* AuthTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4DA2C7CE4F2004554B9 /* AuthTextfield.swift */; };
+		16D8E4DD2C7CE900004554B9 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4DC2C7CE900004554B9 /* AuthButton.swift */; };
+		16D8E4DF2C7CECBC004554B9 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4DE2C7CECBC004554B9 /* SignUpScreen.swift */; };
+		16D8E4E22C7CF0CE004554B9 /* AuthScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4E12C7CF0CE004554B9 /* AuthScreenModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +92,12 @@
 		169ED7F82C7CA602000254F0 /* BubbleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleImageView.swift; sourceTree = "<group>"; };
 		169ED7FA2C7CAE9A000254F0 /* BubbleAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleAudioView.swift; sourceTree = "<group>"; };
 		169ED8092C7CBB99000254F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		16D8E4D62C7CE3F4004554B9 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		16D8E4D82C7CE463004554B9 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		16D8E4DA2C7CE4F2004554B9 /* AuthTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextfield.swift; sourceTree = "<group>"; };
+		16D8E4DC2C7CE900004554B9 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		16D8E4DE2C7CECBC004554B9 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		16D8E4E12C7CF0CE004554B9 /* AuthScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +191,7 @@
 		169ED7CC2C7C51EC000254F0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				16D8E4D42C7CE3D5004554B9 /* Auth */,
 				169ED7E42C7C6701000254F0 /* Chat */,
 				169ED7D32C7C524A000254F0 /* Settings */,
 				169ED7D22C7C523C000254F0 /* Channel */,
@@ -318,6 +331,35 @@
 				169ED7F62C7C9D8A000254F0 /* CustomModifiers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		16D8E4D42C7CE3D5004554B9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4E02C7CF0BD004554B9 /* ViewModels */,
+				16D8E4D52C7CE3E5004554B9 /* Views */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		16D8E4D52C7CE3E5004554B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4D62C7CE3F4004554B9 /* LoginScreen.swift */,
+				16D8E4DE2C7CECBC004554B9 /* SignUpScreen.swift */,
+				16D8E4DC2C7CE900004554B9 /* AuthButton.swift */,
+				16D8E4DA2C7CE4F2004554B9 /* AuthTextfield.swift */,
+				16D8E4D82C7CE463004554B9 /* AuthHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		16D8E4E02C7CF0BD004554B9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4E12C7CF0CE004554B9 /* AuthScreenModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,22 +503,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				169ED7C92C7BC65B000254F0 /* UpdatesTabScreen.swift in Sources */,
+				16D8E4E22C7CF0CE004554B9 /* AuthScreenModel.swift in Sources */,
+				16D8E4DD2C7CE900004554B9 /* AuthButton.swift in Sources */,
 				169ED7CB2C7C4BC7000254F0 /* CallsTabScreen.swift in Sources */,
 				169ED7DE2C7C5CA6000254F0 /* SettingsTabScreen.swift in Sources */,
+				16D8E4D92C7CE463004554B9 /* AuthHeaderView.swift in Sources */,
 				169ED7D62C7C526A000254F0 /* CommunityTabScreen.swift in Sources */,
 				169ED7EB2C7C6FD4000254F0 /* MessageListController.swift in Sources */,
 				169ED7E92C7C68AC000254F0 /* TextInputArea.swift in Sources */,
+				16D8E4DF2C7CECBC004554B9 /* SignUpScreen.swift in Sources */,
 				169ED7F42C7C9C3D000254F0 /* BubbleTailView.swift in Sources */,
 				169ED7D92C7C54F3000254F0 /* ChannelTabScreen.swift in Sources */,
 				169ED79B2C7BB95F000254F0 /* SnapTalkApp.swift in Sources */,
 				169ED7F92C7CA602000254F0 /* BubbleImageView.swift in Sources */,
 				169ED7ED2C7C7333000254F0 /* MessageListView.swift in Sources */,
+				16D8E4D72C7CE3F4004554B9 /* LoginScreen.swift in Sources */,
 				169ED7E72C7C671B000254F0 /* ChatRoomScreen.swift in Sources */,
 				169ED7E02C7C5CFA000254F0 /* SettingsItemView.swift in Sources */,
 				169ED7F22C7C9B9C000254F0 /* BubbleTextView.swift in Sources */,
 				169ED7F02C7C9B01000254F0 /* MessageItem.swift in Sources */,
 				169ED7DB2C7C5865000254F0 /* ChannelItemView.swift in Sources */,
 				169ED7F72C7C9D8A000254F0 /* CustomModifiers.swift in Sources */,
+				16D8E4DB2C7CE4F2004554B9 /* AuthTextfield.swift in Sources */,
 				169ED7FB2C7CAE9A000254F0 /* BubbleAudioView.swift in Sources */,
 				169ED7C52C7BBC17000254F0 /* MainTabView.swift in Sources */,
 				169ED7E32C7C5D9E000254F0 /* SettingsItem.swift in Sources */,
