@@ -36,7 +36,7 @@
 		169ED8002C7CB436000254F0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 169ED7FF2C7CB436000254F0 /* FirebaseDatabase */; };
 		169ED8022C7CB436000254F0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 169ED8012C7CB436000254F0 /* FirebaseMessaging */; };
 		169ED8042C7CB436000254F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 169ED8032C7CB436000254F0 /* FirebaseStorage */; };
-		169ED8062C7CB4FF000254F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 169ED8052C7CB4FF000254F0 /* GoogleService-Info.plist */; };
+		169ED80A2C7CBB99000254F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 169ED8092C7CBB99000254F0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 		169ED7F62C7C9D8A000254F0 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		169ED7F82C7CA602000254F0 /* BubbleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleImageView.swift; sourceTree = "<group>"; };
 		169ED7FA2C7CAE9A000254F0 /* BubbleAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleAudioView.swift; sourceTree = "<group>"; };
-		169ED8052C7CB4FF000254F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		169ED8092C7CBB99000254F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +143,9 @@
 				169ED7F52C7C9D5B000254F0 /* Helpers */,
 				169ED7CC2C7C51EC000254F0 /* Screens */,
 				169ED7C42C7BBC17000254F0 /* MainTabView.swift */,
+				169ED8092C7CBB99000254F0 /* GoogleService-Info.plist */,
 				169ED79A2C7BB95F000254F0 /* SnapTalkApp.swift */,
 				169ED79E2C7BB960000254F0 /* Assets.xcassets */,
-				169ED8052C7CB4FF000254F0 /* GoogleService-Info.plist */,
 				169ED7A02C7BB960000254F0 /* Preview Content */,
 			);
 			path = SnapTalk;
@@ -435,7 +435,7 @@
 			files = (
 				169ED7A22C7BB960000254F0 /* Preview Assets.xcassets in Resources */,
 				169ED79F2C7BB960000254F0 /* Assets.xcassets in Resources */,
-				169ED8062C7CB4FF000254F0 /* GoogleService-Info.plist in Resources */,
+				169ED80A2C7CBB99000254F0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
