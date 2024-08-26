@@ -15,6 +15,21 @@
 		169ED7B82C7BB960000254F0 /* SnapTalkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7B72C7BB960000254F0 /* SnapTalkUITestsLaunchTests.swift */; };
 		169ED7C52C7BBC17000254F0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7C42C7BBC17000254F0 /* MainTabView.swift */; };
 		169ED7C92C7BC65B000254F0 /* UpdatesTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7C82C7BC65B000254F0 /* UpdatesTabScreen.swift */; };
+		169ED7CB2C7C4BC7000254F0 /* CallsTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7CA2C7C4BC7000254F0 /* CallsTabScreen.swift */; };
+		169ED7D62C7C526A000254F0 /* CommunityTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7D52C7C526A000254F0 /* CommunityTabScreen.swift */; };
+		169ED7D92C7C54F3000254F0 /* ChannelTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7D82C7C54F3000254F0 /* ChannelTabScreen.swift */; };
+		169ED7DB2C7C5865000254F0 /* ChannelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7DA2C7C5865000254F0 /* ChannelItemView.swift */; };
+		169ED7DE2C7C5CA6000254F0 /* SettingsTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7DD2C7C5CA6000254F0 /* SettingsTabScreen.swift */; };
+		169ED7E02C7C5CFA000254F0 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7DF2C7C5CFA000254F0 /* SettingsItemView.swift */; };
+		169ED7E32C7C5D9E000254F0 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7E22C7C5D9E000254F0 /* SettingsItem.swift */; };
+		169ED7E72C7C671B000254F0 /* ChatRoomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7E62C7C671B000254F0 /* ChatRoomScreen.swift */; };
+		169ED7E92C7C68AC000254F0 /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7E82C7C68AC000254F0 /* TextInputArea.swift */; };
+		169ED7EB2C7C6FD4000254F0 /* MessageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7EA2C7C6FD4000254F0 /* MessageListController.swift */; };
+		169ED7ED2C7C7333000254F0 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7EC2C7C7333000254F0 /* MessageListView.swift */; };
+		169ED7F02C7C9B01000254F0 /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7EF2C7C9B01000254F0 /* MessageItem.swift */; };
+		169ED7F22C7C9B9C000254F0 /* BubbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7F12C7C9B9C000254F0 /* BubbleTextView.swift */; };
+		169ED7F42C7C9C3D000254F0 /* BubbleTailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7F32C7C9C3D000254F0 /* BubbleTailView.swift */; };
+		169ED7F72C7C9D8A000254F0 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169ED7F62C7C9D8A000254F0 /* CustomModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +61,21 @@
 		169ED7B72C7BB960000254F0 /* SnapTalkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapTalkUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		169ED7C42C7BBC17000254F0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		169ED7C82C7BC65B000254F0 /* UpdatesTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesTabScreen.swift; sourceTree = "<group>"; };
+		169ED7CA2C7C4BC7000254F0 /* CallsTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsTabScreen.swift; sourceTree = "<group>"; };
+		169ED7D52C7C526A000254F0 /* CommunityTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabScreen.swift; sourceTree = "<group>"; };
+		169ED7D82C7C54F3000254F0 /* ChannelTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTabScreen.swift; sourceTree = "<group>"; };
+		169ED7DA2C7C5865000254F0 /* ChannelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItemView.swift; sourceTree = "<group>"; };
+		169ED7DD2C7C5CA6000254F0 /* SettingsTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabScreen.swift; sourceTree = "<group>"; };
+		169ED7DF2C7C5CFA000254F0 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
+		169ED7E22C7C5D9E000254F0 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		169ED7E62C7C671B000254F0 /* ChatRoomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomScreen.swift; sourceTree = "<group>"; };
+		169ED7E82C7C68AC000254F0 /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
+		169ED7EA2C7C6FD4000254F0 /* MessageListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListController.swift; sourceTree = "<group>"; };
+		169ED7EC2C7C7333000254F0 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
+		169ED7EF2C7C9B01000254F0 /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		169ED7F12C7C9B9C000254F0 /* BubbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextView.swift; sourceTree = "<group>"; };
+		169ED7F32C7C9C3D000254F0 /* BubbleTailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTailView.swift; sourceTree = "<group>"; };
+		169ED7F62C7C9D8A000254F0 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +126,12 @@
 		169ED7992C7BB95F000254F0 /* SnapTalk */ = {
 			isa = PBXGroup;
 			children = (
+				169ED7F52C7C9D5B000254F0 /* Helpers */,
+				169ED7CC2C7C51EC000254F0 /* Screens */,
 				169ED7C42C7BBC17000254F0 /* MainTabView.swift */,
 				169ED79A2C7BB95F000254F0 /* SnapTalkApp.swift */,
 				169ED79E2C7BB960000254F0 /* Assets.xcassets */,
 				169ED7A02C7BB960000254F0 /* Preview Content */,
-				169ED7C82C7BC65B000254F0 /* UpdatesTabScreen.swift */,
 			);
 			path = SnapTalk;
 			sourceTree = "<group>";
@@ -128,6 +159,148 @@
 				169ED7B72C7BB960000254F0 /* SnapTalkUITestsLaunchTests.swift */,
 			);
 			path = SnapTalkUITests;
+			sourceTree = "<group>";
+		};
+		169ED7CC2C7C51EC000254F0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7E42C7C6701000254F0 /* Chat */,
+				169ED7D32C7C524A000254F0 /* Settings */,
+				169ED7D22C7C523C000254F0 /* Channel */,
+				169ED7D12C7C5233000254F0 /* Communities */,
+				169ED7CE2C7C5217000254F0 /* Calls */,
+				169ED7CD2C7C51FC000254F0 /* Updates */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		169ED7CD2C7C51FC000254F0 /* Updates */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7CF2C7C521F000254F0 /* Views */,
+			);
+			path = Updates;
+			sourceTree = "<group>";
+		};
+		169ED7CE2C7C5217000254F0 /* Calls */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7D02C7C5229000254F0 /* Views */,
+			);
+			path = Calls;
+			sourceTree = "<group>";
+		};
+		169ED7CF2C7C521F000254F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7C82C7BC65B000254F0 /* UpdatesTabScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		169ED7D02C7C5229000254F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7CA2C7C4BC7000254F0 /* CallsTabScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		169ED7D12C7C5233000254F0 /* Communities */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7D42C7C525C000254F0 /* Views */,
+			);
+			path = Communities;
+			sourceTree = "<group>";
+		};
+		169ED7D22C7C523C000254F0 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7D72C7C54E6000254F0 /* Views */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		169ED7D32C7C524A000254F0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7E12C7C5D8D000254F0 /* Models */,
+				169ED7DC2C7C5C98000254F0 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		169ED7D42C7C525C000254F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7D52C7C526A000254F0 /* CommunityTabScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		169ED7D72C7C54E6000254F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7D82C7C54F3000254F0 /* ChannelTabScreen.swift */,
+				169ED7DA2C7C5865000254F0 /* ChannelItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		169ED7DC2C7C5C98000254F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7DD2C7C5CA6000254F0 /* SettingsTabScreen.swift */,
+				169ED7DF2C7C5CFA000254F0 /* SettingsItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		169ED7E12C7C5D8D000254F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7E22C7C5D9E000254F0 /* SettingsItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		169ED7E42C7C6701000254F0 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7EE2C7C9AE6000254F0 /* Models */,
+				169ED7E52C7C6705000254F0 /* Views */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		169ED7E52C7C6705000254F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7E62C7C671B000254F0 /* ChatRoomScreen.swift */,
+				169ED7EC2C7C7333000254F0 /* MessageListView.swift */,
+				169ED7E82C7C68AC000254F0 /* TextInputArea.swift */,
+				169ED7EA2C7C6FD4000254F0 /* MessageListController.swift */,
+				169ED7F12C7C9B9C000254F0 /* BubbleTextView.swift */,
+				169ED7F32C7C9C3D000254F0 /* BubbleTailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		169ED7EE2C7C9AE6000254F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7EF2C7C9B01000254F0 /* MessageItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		169ED7F52C7C9D5B000254F0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				169ED7F62C7C9D8A000254F0 /* CustomModifiers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +434,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				169ED7C92C7BC65B000254F0 /* UpdatesTabScreen.swift in Sources */,
+				169ED7CB2C7C4BC7000254F0 /* CallsTabScreen.swift in Sources */,
+				169ED7DE2C7C5CA6000254F0 /* SettingsTabScreen.swift in Sources */,
+				169ED7D62C7C526A000254F0 /* CommunityTabScreen.swift in Sources */,
+				169ED7EB2C7C6FD4000254F0 /* MessageListController.swift in Sources */,
+				169ED7E92C7C68AC000254F0 /* TextInputArea.swift in Sources */,
+				169ED7F42C7C9C3D000254F0 /* BubbleTailView.swift in Sources */,
+				169ED7D92C7C54F3000254F0 /* ChannelTabScreen.swift in Sources */,
 				169ED79B2C7BB95F000254F0 /* SnapTalkApp.swift in Sources */,
+				169ED7ED2C7C7333000254F0 /* MessageListView.swift in Sources */,
+				169ED7E72C7C671B000254F0 /* ChatRoomScreen.swift in Sources */,
+				169ED7E02C7C5CFA000254F0 /* SettingsItemView.swift in Sources */,
+				169ED7F22C7C9B9C000254F0 /* BubbleTextView.swift in Sources */,
+				169ED7F02C7C9B01000254F0 /* MessageItem.swift in Sources */,
+				169ED7DB2C7C5865000254F0 /* ChannelItemView.swift in Sources */,
+				169ED7F72C7C9D8A000254F0 /* CustomModifiers.swift in Sources */,
 				169ED7C52C7BBC17000254F0 /* MainTabView.swift in Sources */,
+				169ED7E32C7C5D9E000254F0 /* SettingsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
