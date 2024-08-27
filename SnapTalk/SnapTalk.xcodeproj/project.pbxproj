@@ -43,6 +43,11 @@
 		16D8E4DD2C7CE900004554B9 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4DC2C7CE900004554B9 /* AuthButton.swift */; };
 		16D8E4DF2C7CECBC004554B9 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4DE2C7CECBC004554B9 /* SignUpScreen.swift */; };
 		16D8E4E22C7CF0CE004554B9 /* AuthScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4E12C7CF0CE004554B9 /* AuthScreenModel.swift */; };
+		16D8E4E52C7DA43F004554B9 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4E42C7DA43F004554B9 /* AuthProvider.swift */; };
+		16D8E4E92C7DB00A004554B9 /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4E82C7DB00A004554B9 /* RootScreen.swift */; };
+		16D8E4EC2C7DB026004554B9 /* RootScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4EB2C7DB026004554B9 /* RootScreenModel.swift */; };
+		16D8E4EF2C7DB4AB004554B9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4EE2C7DB4AB004554B9 /* UserItem.swift */; };
+		16D8E4F22C7DB4F4004554B9 /* FirebaeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E4F12C7DB4F4004554B9 /* FirebaeConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +103,11 @@
 		16D8E4DC2C7CE900004554B9 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		16D8E4DE2C7CECBC004554B9 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		16D8E4E12C7CF0CE004554B9 /* AuthScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenModel.swift; sourceTree = "<group>"; };
+		16D8E4E42C7DA43F004554B9 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		16D8E4E82C7DB00A004554B9 /* RootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
+		16D8E4EB2C7DB026004554B9 /* RootScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenModel.swift; sourceTree = "<group>"; };
+		16D8E4EE2C7DB4AB004554B9 /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
+		16D8E4F12C7DB4F4004554B9 /* FirebaeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaeConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +162,7 @@
 		169ED7992C7BB95F000254F0 /* SnapTalk */ = {
 			isa = PBXGroup;
 			children = (
+				16D8E4F02C7DB4DE004554B9 /* Utils */,
 				169ED7F52C7C9D5B000254F0 /* Helpers */,
 				169ED7CC2C7C51EC000254F0 /* Screens */,
 				169ED7C42C7BBC17000254F0 /* MainTabView.swift */,
@@ -191,6 +202,7 @@
 		169ED7CC2C7C51EC000254F0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				16D8E4E62C7DAFEA004554B9 /* Root */,
 				16D8E4D42C7CE3D5004554B9 /* Auth */,
 				169ED7E42C7C6701000254F0 /* Chat */,
 				169ED7D32C7C524A000254F0 /* Settings */,
@@ -336,6 +348,8 @@
 		16D8E4D42C7CE3D5004554B9 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				16D8E4ED2C7DB47A004554B9 /* Model */,
+				16D8E4E32C7DA431004554B9 /* Services */,
 				16D8E4E02C7CF0BD004554B9 /* ViewModels */,
 				16D8E4D52C7CE3E5004554B9 /* Views */,
 			);
@@ -360,6 +374,55 @@
 				16D8E4E12C7CF0CE004554B9 /* AuthScreenModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		16D8E4E32C7DA431004554B9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4E42C7DA43F004554B9 /* AuthProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		16D8E4E62C7DAFEA004554B9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4EA2C7DB018004554B9 /* ViewModel */,
+				16D8E4E72C7DAFFB004554B9 /* Views */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		16D8E4E72C7DAFFB004554B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4E82C7DB00A004554B9 /* RootScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		16D8E4EA2C7DB018004554B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4EB2C7DB026004554B9 /* RootScreenModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		16D8E4ED2C7DB47A004554B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4EE2C7DB4AB004554B9 /* UserItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		16D8E4F02C7DB4DE004554B9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				16D8E4F12C7DB4F4004554B9 /* FirebaeConstants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,14 +567,19 @@
 			files = (
 				169ED7C92C7BC65B000254F0 /* UpdatesTabScreen.swift in Sources */,
 				16D8E4E22C7CF0CE004554B9 /* AuthScreenModel.swift in Sources */,
+				16D8E4EC2C7DB026004554B9 /* RootScreenModel.swift in Sources */,
 				16D8E4DD2C7CE900004554B9 /* AuthButton.swift in Sources */,
 				169ED7CB2C7C4BC7000254F0 /* CallsTabScreen.swift in Sources */,
+				16D8E4F22C7DB4F4004554B9 /* FirebaeConstants.swift in Sources */,
+				16D8E4EF2C7DB4AB004554B9 /* UserItem.swift in Sources */,
 				169ED7DE2C7C5CA6000254F0 /* SettingsTabScreen.swift in Sources */,
 				16D8E4D92C7CE463004554B9 /* AuthHeaderView.swift in Sources */,
+				16D8E4E52C7DA43F004554B9 /* AuthProvider.swift in Sources */,
 				169ED7D62C7C526A000254F0 /* CommunityTabScreen.swift in Sources */,
 				169ED7EB2C7C6FD4000254F0 /* MessageListController.swift in Sources */,
 				169ED7E92C7C68AC000254F0 /* TextInputArea.swift in Sources */,
 				16D8E4DF2C7CECBC004554B9 /* SignUpScreen.swift in Sources */,
+				16D8E4E92C7DB00A004554B9 /* RootScreen.swift in Sources */,
 				169ED7F42C7C9C3D000254F0 /* BubbleTailView.swift in Sources */,
 				169ED7D92C7C54F3000254F0 /* ChannelTabScreen.swift in Sources */,
 				169ED79B2C7BB95F000254F0 /* SnapTalkApp.swift in Sources */,

@@ -23,7 +23,7 @@ struct SnapTalkApp: App {
 
   var body: some Scene {
       WindowGroup {
-          LoginScreen()
+          RootScreen()
       }
   }
 }
