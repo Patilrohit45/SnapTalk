@@ -19,6 +19,9 @@ struct SignUpScreen: View {
                 
                 AuthButton(title: "Create an Acccount") {
                     // Sign up action
+                    Task{
+                        await authScreenModel.handleSignUp()
+                    }
                 }
                 .disabled(authScreenModel.disableSignUpButton)
                 
