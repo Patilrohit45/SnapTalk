@@ -9,7 +9,10 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    init(){
+    private let currentUser:UserItem
+    
+    init(_ currentUser:UserItem){
+        self.currentUser = currentUser
         makeTabbarOpaque()
         let thumbImage = UIImage(systemName: "circle.fill")
         UISlider.appearance().setThumbImage(thumbImage, for: .normal)
@@ -55,7 +58,7 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(.placeholder)
 }
 
 extension MainTabView{
