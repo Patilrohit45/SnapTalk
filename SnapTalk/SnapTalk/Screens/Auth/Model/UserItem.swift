@@ -21,6 +21,8 @@ struct UserItem : Identifiable,Hashable,Decodable{
     var bioUnwrapped:String{
         return bio ?? "Hey there! I am using SnapTalk"
     }
+    
+    static let placeholder = UserItem(uid: "1", username: "Hitman", email: "hitman@gmail.com")
 }
 
 extension UserItem{
