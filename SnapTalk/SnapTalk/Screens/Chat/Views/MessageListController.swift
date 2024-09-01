@@ -8,16 +8,34 @@
 import Foundation
 import UIKit
 import SwiftUI
+import Combine
 
 final class MessageListController : UIViewController{
     
     // MARK: Vies's LifeCycle
     override func viewDidLoad(){
         super.viewDidLoad()
+        tableView.backgroundColor = .clear
+        view.backgroundColor = .clear
         setUpViews()
+        setUoMessageListners()
+    }
+    init(_ viewModel:ChatRoomViewModel){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
     
+    deinit{
+        subscription.forEach{ $0.cancel() }
+        subscription.removeAll()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     // MARK: Properties
+    private let viewModel:ChatRoomViewModel
+    private var subscription = Set<AnyCancellable>()
     private let cellIdentifier = "MessageListControllerCells"
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -29,11 +47,25 @@ final class MessageListController : UIViewController{
         return tableView
     }()
     
+    private let backgroundImageView:UIImageView = {
+        let backgroundImageView = UIImageView(image: .chatbackground)
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        return backgroundImageView
+    }()
+    
     // MARK: Methods
     private func setUpViews(){
+        view.addSubview(backgroundImageView)
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
+            /// For the background Image
+            backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            /// For the Chat tableView
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -41,6 +73,16 @@ final class MessageListController : UIViewController{
         ])
         
         tableView.register(UITableViewCell.self,forCellReuseIdentifier: cellIdentifier)
+    }
+    
+    private func setUoMessageListners(){
+        let delay = 200
+        viewModel.$messages
+            .debounce(for: .milliseconds(delay), scheduler: DispatchQueue.main)
+            .sink {[weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &subscription)
     }
 }
 
@@ -53,7 +95,7 @@ extension MessageListController:UITableViewDelegate,UITableViewDataSource{
         
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
-        let message = MessageItem.stubMessages[indexPath.row]
+        let message = viewModel.messages[indexPath.row]
         cell.contentConfiguration = UIHostingConfiguration{
             switch message.type{
             case .text:
@@ -62,13 +104,25 @@ extension MessageListController:UITableViewDelegate,UITableViewDataSource{
                 BubbleImageView(item: message)
             case .audio:
                 BubbleAudioView(item: message)
+            case .admin(let adminType):
+                switch adminType {
+                case .channelCreation:
+                    ChannelCreationTextView()
+                    
+                    if viewModel.channel.isGroupChat{
+                        AdminMessageTextView(channel: viewModel.channel)
+                    }
+                
+                default:
+                    Text("Unkown")
+                }
             }
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MessageItem.stubMessages.count
+        return viewModel.messages.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,5 +131,6 @@ extension MessageListController:UITableViewDelegate,UITableViewDataSource{
 }
 
 #Preview {
-    MessageListView()
+    MessageListView(ChatRoomViewModel(.placeholder))
+        .ignoresSafeArea()
 }

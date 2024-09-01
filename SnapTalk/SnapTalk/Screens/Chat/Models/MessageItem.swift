@@ -6,17 +6,22 @@
 //
 
 import SwiftUI
-
+import Firebase
+import FirebaseAuth
 
 struct MessageItem:Identifiable{
-    
-    let id = UUID().uuidString
+    let id : String
     let text:String
     let type:MessageType
-    let direction:MessageDirection
+    let ownerUid:String
+    let timeStamp:Date
     
-    static let sentPlaceholder = MessageItem(text: "Hello Rohit", type: .text, direction: .sent)
-    static let receivedPlaceholder = MessageItem(text: "Hii Rohit", type: .text, direction: .received)
+    var direction:MessageDirection{
+        return ownerUid == Auth.auth().currentUser?.uid ? .sent : .received
+    }
+    
+    static let sentPlaceholder = MessageItem(id: UUID().uuidString, text: "Hey Dear", type: .text, ownerUid: "1",timeStamp: Date())
+    static let receivedPlaceholder = MessageItem(id: UUID().uuidString, text: "Hey Dude, what's up!", type: .text, ownerUid: "2",timeStamp: Date())
     
     var alignment:Alignment{
         return direction == .received ? .leading : .trailing
@@ -31,22 +36,29 @@ struct MessageItem:Identifiable{
     }
     
     static let stubMessages:[MessageItem] = [
-        MessageItem(text: "Hii There!", type: .text, direction: .sent),
-        MessageItem(text: "Check out this photo", type: .photo, direction: .received),
-        MessageItem(text: "Play out this Video", type: .video, direction: .sent),
-        MessageItem(text: "", type: .audio, direction: .received)
+        MessageItem(id: UUID().uuidString, text: "Hey There", type: .text, ownerUid: "3",timeStamp: Date()),
+        MessageItem(id: UUID().uuidString, text: "CheckOut this photo", type: .photo, ownerUid: "4",timeStamp: Date()),
+        MessageItem(id: UUID().uuidString, text: "Hey Play this video", type: .video, ownerUid: "5",timeStamp: Date()),
+        MessageItem(id: UUID().uuidString, text: "", type: .audio, ownerUid: "6",timeStamp: Date())
 
     ]
 }
 
-enum MessageDirection {
-    case sent,received
-    
-    static var random:MessageDirection{
-        return [MessageDirection.sent,.received].randomElement() ?? .sent
+extension MessageItem{
+    init(id:String,dict:[String:Any]){
+        self.id = id
+        self.text = dict[.text] as? String ?? ""
+        let type = dict[.type] as? String ?? "text"
+        self.type = MessageType(type) ?? .text
+        self.ownerUid = dict[.ownerUid] as? String ?? ""
+        let timeInterval = dict[.timeStamp] as? TimeInterval ?? 0
+        self.timeStamp = Date(timeIntervalSince1970: timeInterval)
     }
 }
 
-enum MessageType{
-    case text,photo,video,audio
+extension String{
+    static let text = "text"
+    static let type = "type"
+    static let timeStamp = "timeStamp"
+    static let ownerUid = "ownerUid"
 }

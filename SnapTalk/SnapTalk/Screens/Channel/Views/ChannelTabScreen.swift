@@ -9,14 +9,15 @@ import SwiftUI
 
 struct ChannelTabScreen: View {
     @State private var searchText = ""
-    @State private var showChatPartnerView = false
+   
+    @StateObject private var viewModel = ChannelTabViewModel()
     var body: some View {
         NavigationStack {
             List{
                 archivedButton()
-                ForEach(0..<5){_ in
-                    NavigationLink(destination: ChatRoomScreen()) {
-                        ChannelItemView()
+                ForEach(viewModel.channels){channel in
+                    NavigationLink(destination: ChatRoomScreen(channel: channel)) {
+                        ChannelItemView(channel:channel)
                     }
                 }
                 inboxFooterView()
@@ -29,9 +30,14 @@ struct ChannelTabScreen: View {
                 leadingNavItems()
                 trailingNavItems()
             }
-            .sheet(isPresented: $showChatPartnerView, content: {
-                ChatPartnerPickerScreen()
-            })
+            .sheet(isPresented: $viewModel.showChatPartnerView){
+                ChatPartnerPickerScreen(onCreate: viewModel.onNewChannelCreation)
+            }
+            .navigationDestination(isPresented: $viewModel.navigateToChatRoom) {
+                if let newChannel = viewModel.newChannel{
+                    ChatRoomScreen(channel: newChannel)
+                }
+            }
         }
     }
     
@@ -70,7 +76,7 @@ extension ChannelTabScreen{
     }
     private func newChatButton() -> some View{
         Button{
-            showChatPartnerView = true
+            viewModel.showChatPartnerView = true
         }label: {
             Image(.plus)
         }

@@ -110,7 +110,7 @@ extension AuthManager{
         do{
             let userDictionary : [String:Any] = [.uid:user.id,.username:user.username,.email:user.email]
             
-            try await  FirebaeConstants.UserRef.child(user.uid).setValue(userDictionary)
+            try await  FirebaseConstants.UserRef.child(user.uid).setValue(userDictionary)
         }catch{
             print("🔐 failed to save user info to database \(error.localizedDescription)")
             throw AuthError.failedToSaveUserInfo(error.localizedDescription)
@@ -118,7 +118,7 @@ extension AuthManager{
     }
     private func fetchCurrentUserInfo() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        FirebaeConstants.UserRef.child(currentUid).observe(.value){ [weak self] snapshot in
+        FirebaseConstants.UserRef.child(currentUid).observe(.value){ [weak self] snapshot in
             guard let userDict = snapshot.value as? [String:Any] else { return }
             let loggedInUser = UserItem(dictionary: userDict)
             self?.authState.send(.loggedIn(loggedInUser))
@@ -130,3 +130,58 @@ extension AuthManager{
 }
 
 
+extension AuthManager{
+    
+    static let testAccount: [String] = [
+        "QaUser1@test.com",
+        "QaUser2@test.com",
+        "QaUser3@test.com",
+        "QaUser4@test.com",
+        "QaUser5@test.com",
+        "QaUser6@test.com",
+        "QaUser7@test.com",
+        "QaUser8@test.com",
+        "QaUser9@test.com",
+        "QaUser10@test.com",
+        "QaUser11@test.com",
+        "QaUser12@test.com",
+        "QaUser13@test.com",
+        "QaUser14@test.com",
+        "QaUser15@test.com",
+        "QaUser16@test.com",
+        "QaUser17@test.com",
+        "QaUser18@test.com",
+        "QaUser19@test.com",
+        "QaUser20@test.com",
+        "QaUser21@test.com",
+        "QaUser22@test.com",
+        "QaUser23@test.com",
+        "QaUser24@test.com",
+        "QaUser25@test.com",
+        "QaUser26@test.com",
+        "QaUser27@test.com",
+        "QaUser28@test.com",
+        "QaUser29@test.com",
+        "QaUser30@test.com",
+        "QaUser31@test.com",
+        "QaUser32@test.com",
+        "QaUser33@test.com",
+        "QaUser34@test.com",
+        "QaUser35@test.com",
+        "QaUser36@test.com",
+        "QaUser37@test.com",
+        "QaUser38@test.com",
+        "QaUser39@test.com",
+        "QaUser40@test.com",
+        "QaUser41@test.com",
+        "QaUser42@test.com",
+        "QaUser43@test.com",
+        "QaUser44@test.com",
+        "QaUser45@test.com",
+        "QaUser46@test.com",
+        "QaUser47@test.com",
+        "QaUser48@test.com",
+        "QaUser49@test.com",
+        "QaUser50@test.com",
+    ]
+}

@@ -11,23 +11,33 @@ struct ChatPartnerPickerScreen: View {
     @State private var searchText:String = ""
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = ChatPartnerPickerViewModel()
+    
+    var onCreate:(_ newChannel:ChannelItem) -> Void
+    
     var body: some View {
         NavigationStack(path: $viewModel.navStack){
             List{
                 ForEach(ChatPartnerPickerOption.allCases){ item in
-                    HeaderItemView(item: item)
-                        .onTapGesture {
-                            viewModel.navStack.append(.groupPartnerPicker)
-                        }
+                    HeaderItemView(item: item){
+                        guard item == ChatPartnerPickerOption.newGroup else { return }
+                        viewModel.navStack.append(.groupPartnerPicker)
+                    }
                 }
                 Section{
-                    ForEach(0..<12){_ in
-                        ChatPartnerRowView(user: .placeholder)
+                    ForEach(viewModel.users){ user in
+                        ChatPartnerRowView(user: user)
+                            .onTapGesture {
+                                viewModel.createDirectChannel(user,completion: onCreate)
+                                
+                            }
                     }
                 }header: {
                     Text("Contacts on SnapTalk")
                         .textCase(nil)
                         .bold()
+                }
+                if viewModel.isPaginable{
+                    loadMoreUsersView()
                 }
             }
             .searchable(text: $searchText,
@@ -37,10 +47,29 @@ struct ChatPartnerPickerScreen: View {
                 destinationView(for: route)
             }
             .navigationBarTitleDisplayMode(.inline)
+            .alert(isPresented: $viewModel.errorState.showError){
+                Alert(
+                    title: Text("Uh Oh😟"),
+                    message: Text(viewModel.errorState.errorMessage),
+                    dismissButton: .default(Text("Ok"))
+                )
+            }
             .toolbar{
                 trailingNavItem()
             }
+            .onAppear{
+                viewModel.deSelecetAllChatPartners()
+            }
         }
+    }
+    
+    private func loadMoreUsersView() -> some View{
+        ProgressView()
+            .frame(maxWidth: .infinity)
+            .listRowBackground(Color.clear)
+            .task {
+                await viewModel.fetchUsers()
+            }
     }
 }
 
@@ -51,7 +80,7 @@ extension ChatPartnerPickerScreen{
         case .groupPartnerPicker:
             GroupPartnerPickerScreen(viewModel: viewModel)
         case .setUpGroupChat:
-            NewGroupSetUpScreen(viewModel: viewModel)
+            NewGroupSetUpScreen(viewModel: viewModel, onCreate: onCreate)
         }
     }
 }
@@ -82,9 +111,10 @@ extension ChatPartnerPickerScreen{
 extension ChatPartnerPickerScreen{
     private struct HeaderItemView:View {
         let item:ChatPartnerPickerOption
+        let onTapHandler:() -> Void
         var body: some View {
             Button{
-                
+                onTapHandler()
             }label: {
                 buttonBody()
             }
@@ -130,5 +160,7 @@ enum ChatPartnerPickerOption: String,CaseIterable,Identifiable{
 
 
 #Preview {
-    ChatPartnerPickerScreen()
+    ChatPartnerPickerScreen{ channel in
+        //
+    }
 }
