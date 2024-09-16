@@ -68,6 +68,7 @@ extension CallsTabScreen{
                 ForEach(CallHistory.allCases){ item in
                     Text(item.rawValue.capitalized)
                         .tag(item)
+                        .padding(.top,45)
                 }
             }
             .pickerStyle(.segmented)

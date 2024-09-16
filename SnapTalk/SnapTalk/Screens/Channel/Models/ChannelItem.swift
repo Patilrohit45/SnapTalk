@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-struct ChannelItem : Identifiable{
+struct ChannelItem : Identifiable,Hashable{
     var id:String
     var name:String?
     var lastMessage:String
@@ -19,13 +19,24 @@ struct ChannelItem : Identifiable{
     var adminsUids:[String]
     var membersUids:[String]
     var members:[UserItem]
-    var thumbnailUrl:String?
+    private var thumbnailUrl:String?
     let createdBy : String
     
     var isGroupChat:Bool{
         return membersCount > 2
     }
     
+    var coverImageUrl:String?{
+        if let thumbnailUrl = thumbnailUrl{
+            return thumbnailUrl
+        }
+        
+        if isGroupChat == false{
+            return membersExcludingMe.first?.profileImageUrl
+        }
+        
+        return nil
+    }
     
     
     var membersExcludingMe:[UserItem]{
@@ -69,6 +80,10 @@ struct ChannelItem : Identifiable{
         return members.first { $0.uid == createdBy }?.username ?? "Someone"
     }
     
+    var allMembersFetched:Bool{
+        return members.count == membersCount
+    }
+    
     static let placeholder = ChannelItem(id: "1", lastMessage: "Hello !!!", creationDate: Date(), lastMessageTimeStamp: Date(), membersCount: 2, adminsUids: [], membersUids: [], members: [],createdBy: "")
 }
 
@@ -103,4 +118,5 @@ extension String{
     static let thumbnailUrl = "thumbnailUrl"
     static let members = "members"
     static let createdBy = "createdBy"
+    static let lastMessageType = "lastMessageType"
 }

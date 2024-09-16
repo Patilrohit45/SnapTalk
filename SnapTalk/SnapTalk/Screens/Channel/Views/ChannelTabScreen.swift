@@ -10,13 +10,20 @@ import SwiftUI
 struct ChannelTabScreen: View {
     @State private var searchText = ""
    
-    @StateObject private var viewModel = ChannelTabViewModel()
+    @StateObject private var viewModel : ChannelTabViewModel
+    
+    init(_ currentUser:UserItem){
+        self._viewModel = StateObject(wrappedValue: ChannelTabViewModel(currentUser))
+    }
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path:$viewModel.navRoutes){
             List{
                 archivedButton()
                 ForEach(viewModel.channels){channel in
-                    NavigationLink(destination: ChatRoomScreen(channel: channel)) {
+                    Button{
+                        viewModel.navRoutes.append(.chatRoom(channel))
+                    }label: {
                         ChannelItemView(channel:channel)
                     }
                 }
@@ -33,6 +40,9 @@ struct ChannelTabScreen: View {
             .sheet(isPresented: $viewModel.showChatPartnerView){
                 ChatPartnerPickerScreen(onCreate: viewModel.onNewChannelCreation)
             }
+            .navigationDestination(for: ChannelTabRoutes.self){ route in
+                destinationView(for: route)
+            }
             .navigationDestination(isPresented: $viewModel.navigateToChatRoom) {
                 if let newChannel = viewModel.newChannel{
                     ChatRoomScreen(channel: newChannel)
@@ -44,6 +54,14 @@ struct ChannelTabScreen: View {
 }
 
 extension ChannelTabScreen{
+    @ViewBuilder
+    private func destinationView(for route:ChannelTabRoutes) -> some View{
+        switch route{
+        case .chatRoom(let channel):
+            ChatRoomScreen(channel: channel)
+        }
+    }
+    
     @ToolbarContentBuilder
     private func leadingNavItems() -> some ToolbarContent{
         ToolbarItem(placement: .topBarLeading) {
@@ -118,5 +136,5 @@ extension ChannelTabScreen{
 }
 
 #Preview {
-    ChannelTabScreen()
+    ChannelTabScreen(.placeholder)
 }
