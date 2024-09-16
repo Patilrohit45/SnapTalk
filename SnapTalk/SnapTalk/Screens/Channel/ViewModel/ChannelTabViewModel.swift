@@ -9,15 +9,22 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
+enum ChannelTabRoutes:Hashable{
+    case chatRoom(_ channel:ChannelItem)
+}
 final class ChannelTabViewModel : ObservableObject{
     @Published var navigateToChatRoom = false
     @Published var newChannel:ChannelItem?
     @Published var showChatPartnerView = false
     @Published var channels = [ChannelItem]()
+    @Published var navRoutes = [ChannelTabRoutes]()
     typealias ChannelId = String
     @Published var channelDictionary: [ChannelId: ChannelItem] = [:]
-    
-    init(){
+
+    private let currentUser:UserItem
+
+    init(_ currentUser:UserItem){
+        self.currentUser = currentUser
         fetchCurrentUsersChannels()
     }
     
@@ -42,12 +49,14 @@ final class ChannelTabViewModel : ObservableObject{
     
     private func getChannel(with channelId:String){
         FirebaseConstants.ChannelRef.child(channelId).observe(.value){[weak self] snapshot in
-            guard let dict = snapshot.value as? [String:Any] else { return }
+            guard let dict = snapshot.value as? [String:Any],let self = self else { return }
             var channel = ChannelItem(dict)
-            self?.getChannelMembers(channel){ members in
+            self.getChannelMembers(channel){ members in
                 channel.members = members
-                self?.channelDictionary[channelId] = channel
-                self?.reloadData()
+                    channel.members.append(self.currentUser)
+
+                self.channelDictionary[channelId] = channel
+                self.reloadData()
 //                self?.channels.append(channel)
             }
         }withCancel: { error in
